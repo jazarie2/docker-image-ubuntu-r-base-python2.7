@@ -1,0 +1,17 @@
+FROM ubuntu
+MAINTAINER Jazari Ahmad "jazarie2@gmail.com"
+
+# python and relevant tools
+RUN apt-get update && apt-get install -y \ 
+    python \
+    python-pip
+
+# General dev tools
+RUN apt-get install -y git \
+	r-base
+
+# Latest versions of python tools via pip
+RUN pip install --upgrade pip \
+                          virtualenv \
+                          requests \
+						  paho-mqtt
